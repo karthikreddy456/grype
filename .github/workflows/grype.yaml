@@ -21,10 +21,15 @@ jobs:
       #   run: |
       #     docker build -t my-app:latest .
       
-      - name: Pull Docker Image
+      # - name: Pull Docker Image
+      #   run: |
+      #     docker pull ubuntu:16.04
+      - name: Scanning official kubernetes repository
         run: |
-          docker pull ubuntu:16.04
+           git clone https://github.com/kubernetes/kubernetes.git
+           cd kubernetes
+           grype dir:. --fail-on Critical
 
-      - name: Scan Image with Grype
-        run: |
-          grype ubuntu:16.04 --fail-on critical
+      # - name: Scan Image with Grype
+      #   run: |
+      #     grype ubuntu:16.04 --fail-on critical
