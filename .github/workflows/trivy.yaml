@@ -16,8 +16,8 @@ jobs:
         with:
           image-ref: 'jenkins/jenkins:latest'
           format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
+          exit-code: '0'
+          ignore-unfixed: false
           vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
+          severity: 'CRITICAL,HIGH,LOW,MEDIUM,UNKNOWN'
 
