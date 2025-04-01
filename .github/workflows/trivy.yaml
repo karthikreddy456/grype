@@ -20,4 +20,5 @@ jobs:
           ignore-unfixed: false
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH,LOW,MEDIUM,UNKNOWN'
+          output: 'trivy-results.sarif'
 
