@@ -24,7 +24,7 @@ jobs:
       - name: Pull Docker Image
         run: |
           docker pull ubuntu:16.04
-          
+
       # - name: Scanning official kubernetes repository
       #   run: |
       #      git clone https://github.com/kubernetes/kubernetes.git
@@ -38,6 +38,6 @@ jobs:
       - name: Uploading grype results
         uses: actions/upload-artifact@v4
         with:
-          name: grype-results
+          name: grype-results-file
           path: grype-results.txt
 
