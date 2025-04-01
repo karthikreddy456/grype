@@ -23,7 +23,7 @@ jobs:
       
       - name: Pull Docker Image
         run: |
-          docker pull ubuntu:16.04
+          docker pull jenkins/jenkins:latest
 
       # - name: Scanning official kubernetes repository
       #   run: |
@@ -33,7 +33,7 @@ jobs:
 
       - name: Scan Image with Grype
         run: |
-          grype ubuntu:16.04 --fail-on critical | tee grype-results.txt
+          grype jenkins/jenkins:latest --fail-on critical | tee grype-results.txt
 
       - name: Uploading grype results
         uses: actions/upload-artifact@v4
